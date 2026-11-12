@@ -1,0 +1,980 @@
+Device: cuda; no dropout, no causal attention mask
+Comparison mode: equal_params; seeds: [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61]
+
+=== Seed 42 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.05903, val CE=0.03906, val AP=0.73902, lr=3.00e-04, 7.4s
+    [gelu  ] epoch 02/20 train CE=0.03486, val CE=0.04250, val AP=0.78198, lr=2.98e-04, 7.2s
+    [gelu  ] epoch 03/20 train CE=0.03184, val CE=0.04095, val AP=0.77502, lr=2.92e-04, 7.1s
+    [gelu  ] epoch 04/20 train CE=0.03037, val CE=0.03762, val AP=0.79182, lr=2.83e-04, 7.1s
+    [gelu  ] epoch 05/20 train CE=0.02895, val CE=0.03571, val AP=0.80579, lr=2.70e-04, 7.1s
+    [gelu  ] epoch 06/20 train CE=0.02785, val CE=0.04044, val AP=0.80377, lr=2.54e-04, 7.2s
+    [gelu  ] epoch 07/20 train CE=0.02459, val CE=0.03851, val AP=0.78353, lr=2.35e-04, 7.1s
+    [gelu  ] epoch 08/20 train CE=0.02296, val CE=0.04513, val AP=0.77050, lr=2.15e-04, 7.1s
+    [gelu  ] epoch 09/20 train CE=0.02174, val CE=0.04106, val AP=0.81425, lr=1.92e-04, 7.2s
+    [gelu  ] epoch 10/20 train CE=0.01959, val CE=0.04055, val AP=0.75137, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01707, val CE=0.04388, val AP=0.77402, lr=1.46e-04, 7.2s
+    [gelu  ] epoch 12/20 train CE=0.01717, val CE=0.04787, val AP=0.78378, lr=1.22e-04, 7.2s
+    [gelu  ] epoch 13/20 train CE=0.01382, val CE=0.04843, val AP=0.79090, lr=1.00e-04, 7.2s
+    [gelu  ] epoch 14/20 train CE=0.01107, val CE=0.05500, val AP=0.77674, lr=7.95e-05, 7.2s
+    [gelu  ] epoch 15/20 train CE=0.00834, val CE=0.05940, val AP=0.79165, lr=6.09e-05, 7.2s
+    [gelu  ] epoch 16/20 train CE=0.00816, val CE=0.06517, val AP=0.76664, lr=4.50e-05, 7.2s
+    Early stopping gelu (best epoch 9).
+  -> GELU: best epoch=9, val threshold=0.972602, TEST precision=0.8209, recall=0.7746, F1=0.7971, AP=0.7862, (TP=55, FP=12, FN=16, TN=42476)
+
+    [swiglu] epoch 01/20 train CE=0.08027, val CE=0.03889, val AP=0.76981, lr=3.00e-04, 7.8s
+    [swiglu] epoch 02/20 train CE=0.03559, val CE=0.03971, val AP=0.80036, lr=2.98e-04, 7.8s
+    [swiglu] epoch 03/20 train CE=0.03001, val CE=0.04505, val AP=0.78618, lr=2.92e-04, 7.8s
+    [swiglu] epoch 04/20 train CE=0.02856, val CE=0.03933, val AP=0.80767, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02581, val CE=0.03703, val AP=0.81096, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02335, val CE=0.04345, val AP=0.78983, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02036, val CE=0.04153, val AP=0.80226, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.01937, val CE=0.04039, val AP=0.80639, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01583, val CE=0.04940, val AP=0.75388, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01333, val CE=0.04918, val AP=0.76256, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.01255, val CE=0.05479, val AP=0.80345, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.00942, val CE=0.06400, val AP=0.77884, lr=1.22e-04, 7.9s
+    Early stopping swiglu (best epoch 5).
+  -> SWIGLU: best epoch=5, val threshold=0.872702, TEST precision=0.8028, recall=0.8028, F1=0.8028, AP=0.7945, (TP=57, FP=14, FN=14, TN=42474)
+
+
+=== Seed 43 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07408, val CE=0.04338, val AP=0.74029, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.04147, val CE=0.03949, val AP=0.75086, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03680, val CE=0.03738, val AP=0.75496, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03377, val CE=0.03475, val AP=0.71369, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03193, val CE=0.03053, val AP=0.76339, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.03012, val CE=0.03151, val AP=0.76026, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02931, val CE=0.03102, val AP=0.76530, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02746, val CE=0.03106, val AP=0.76750, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02534, val CE=0.03578, val AP=0.68572, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02430, val CE=0.02938, val AP=0.73690, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.02226, val CE=0.03151, val AP=0.77846, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01971, val CE=0.03442, val AP=0.78163, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01753, val CE=0.03581, val AP=0.78394, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01505, val CE=0.03859, val AP=0.80713, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.01346, val CE=0.04215, val AP=0.79775, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.01045, val CE=0.04523, val AP=0.78710, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00855, val CE=0.04715, val AP=0.75596, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00792, val CE=0.04923, val AP=0.78407, lr=2.27e-05, 7.3s
+    [gelu  ] epoch 19/20 train CE=0.00680, val CE=0.05025, val AP=0.75516, lr=1.69e-05, 7.3s
+    [gelu  ] epoch 20/20 train CE=0.00562, val CE=0.05118, val AP=0.77422, lr=1.50e-05, 7.3s
+  -> GELU: best epoch=14, val threshold=0.977738, TEST precision=0.8493, recall=0.8732, F1=0.8611, AP=0.8606, (TP=62, FP=11, FN=9, TN=42477)
+
+    [swiglu] epoch 01/20 train CE=0.08632, val CE=0.04561, val AP=0.79173, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.04067, val CE=0.03844, val AP=0.78651, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03631, val CE=0.03536, val AP=0.78546, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.03149, val CE=0.03283, val AP=0.82413, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02918, val CE=0.03297, val AP=0.81608, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02791, val CE=0.03125, val AP=0.81034, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02732, val CE=0.03092, val AP=0.79470, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.02385, val CE=0.03483, val AP=0.80484, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.02063, val CE=0.04093, val AP=0.81627, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01867, val CE=0.03462, val AP=0.82202, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01553, val CE=0.03952, val AP=0.84094, lr=1.46e-04, 8.1s
+    [swiglu] epoch 12/20 train CE=0.01281, val CE=0.04752, val AP=0.82816, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00940, val CE=0.04710, val AP=0.82708, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00642, val CE=0.05074, val AP=0.83397, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00423, val CE=0.05209, val AP=0.83851, lr=6.09e-05, 8.0s
+    [swiglu] epoch 16/20 train CE=0.00357, val CE=0.05835, val AP=0.82497, lr=4.50e-05, 8.0s
+    [swiglu] epoch 17/20 train CE=0.00242, val CE=0.05745, val AP=0.82426, lr=3.21e-05, 8.0s
+    [swiglu] epoch 18/20 train CE=0.00177, val CE=0.05862, val AP=0.82784, lr=2.27e-05, 8.0s
+    Early stopping swiglu (best epoch 11).
+  -> SWIGLU: best epoch=11, val threshold=0.978275, TEST precision=0.9524, recall=0.8451, F1=0.8955, AP=0.9109, (TP=60, FP=3, FN=11, TN=42485)
+
+
+=== Seed 44 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.10994, val CE=0.03943, val AP=0.75554, lr=3.00e-04, 7.5s
+    [gelu  ] epoch 02/20 train CE=0.03775, val CE=0.03336, val AP=0.83095, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03352, val CE=0.03060, val AP=0.82303, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03011, val CE=0.03263, val AP=0.82555, lr=2.83e-04, 7.4s
+    [gelu  ] epoch 05/20 train CE=0.02950, val CE=0.03388, val AP=0.83804, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02767, val CE=0.03639, val AP=0.80859, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02636, val CE=0.02812, val AP=0.83793, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02345, val CE=0.02993, val AP=0.83404, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.02333, val CE=0.03241, val AP=0.84596, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02155, val CE=0.03180, val AP=0.84070, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01928, val CE=0.03491, val AP=0.85571, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01622, val CE=0.03898, val AP=0.83625, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01375, val CE=0.03731, val AP=0.84172, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01114, val CE=0.04225, val AP=0.83963, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.00891, val CE=0.03968, val AP=0.84098, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00730, val CE=0.04417, val AP=0.83135, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00542, val CE=0.04354, val AP=0.83928, lr=3.21e-05, 7.4s
+    [gelu  ] epoch 18/20 train CE=0.00507, val CE=0.04866, val AP=0.82337, lr=2.27e-05, 7.5s
+    Early stopping gelu (best epoch 11).
+  -> GELU: best epoch=11, val threshold=0.959237, TEST precision=0.8730, recall=0.7746, F1=0.8209, AP=0.7939, (TP=55, FP=8, FN=16, TN=42480)
+
+    [swiglu] epoch 01/20 train CE=0.10112, val CE=0.03693, val AP=0.79446, lr=3.00e-04, 8.1s
+    [swiglu] epoch 02/20 train CE=0.03695, val CE=0.03234, val AP=0.82276, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03235, val CE=0.03093, val AP=0.81664, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02808, val CE=0.03332, val AP=0.81579, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02662, val CE=0.03193, val AP=0.81113, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02218, val CE=0.05030, val AP=0.78752, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02175, val CE=0.04348, val AP=0.76897, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.01740, val CE=0.04018, val AP=0.83732, lr=2.15e-04, 8.1s
+    [swiglu] epoch 09/20 train CE=0.01592, val CE=0.03804, val AP=0.82941, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01255, val CE=0.04218, val AP=0.81552, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.00800, val CE=0.04713, val AP=0.83671, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.00643, val CE=0.04838, val AP=0.83661, lr=1.22e-04, 7.9s
+    [swiglu] epoch 13/20 train CE=0.00507, val CE=0.05003, val AP=0.82083, lr=1.00e-04, 7.9s
+    [swiglu] epoch 14/20 train CE=0.00312, val CE=0.05123, val AP=0.83724, lr=7.95e-05, 7.9s
+    [swiglu] epoch 15/20 train CE=0.00239, val CE=0.05518, val AP=0.82395, lr=6.09e-05, 7.9s
+    Early stopping swiglu (best epoch 8).
+  -> SWIGLU: best epoch=8, val threshold=0.969862, TEST precision=0.8814, recall=0.7324, F1=0.8000, AP=0.8093, (TP=52, FP=7, FN=19, TN=42481)
+
+
+=== Seed 45 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07113, val CE=0.03229, val AP=0.75113, lr=3.00e-04, 7.5s
+    [gelu  ] epoch 02/20 train CE=0.03833, val CE=0.03156, val AP=0.69526, lr=2.98e-04, 7.5s
+    [gelu  ] epoch 03/20 train CE=0.03301, val CE=0.02927, val AP=0.78029, lr=2.92e-04, 7.5s
+    [gelu  ] epoch 04/20 train CE=0.03084, val CE=0.03243, val AP=0.59637, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03076, val CE=0.02744, val AP=0.75586, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.02850, val CE=0.02690, val AP=0.77665, lr=2.54e-04, 7.4s
+    [gelu  ] epoch 07/20 train CE=0.02672, val CE=0.02629, val AP=0.77391, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02571, val CE=0.02668, val AP=0.80430, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.02275, val CE=0.02728, val AP=0.80974, lr=1.92e-04, 7.5s
+    [gelu  ] epoch 10/20 train CE=0.02147, val CE=0.02480, val AP=0.83628, lr=1.69e-04, 7.6s
+    [gelu  ] epoch 11/20 train CE=0.01828, val CE=0.03021, val AP=0.83884, lr=1.46e-04, 7.4s
+    [gelu  ] epoch 12/20 train CE=0.01767, val CE=0.03058, val AP=0.80196, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01326, val CE=0.03264, val AP=0.83227, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01082, val CE=0.03608, val AP=0.85496, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.00806, val CE=0.03839, val AP=0.85108, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00514, val CE=0.04113, val AP=0.85689, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00464, val CE=0.04171, val AP=0.85133, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00328, val CE=0.04221, val AP=0.85051, lr=2.27e-05, 7.4s
+    [gelu  ] epoch 19/20 train CE=0.00262, val CE=0.04319, val AP=0.84082, lr=1.69e-05, 7.4s
+    [gelu  ] epoch 20/20 train CE=0.00226, val CE=0.04390, val AP=0.85022, lr=1.50e-05, 7.4s
+  -> GELU: best epoch=16, val threshold=0.955513, TEST precision=0.9298, recall=0.7465, F1=0.8281, AP=0.7968, (TP=53, FP=4, FN=18, TN=42484)
+
+    [swiglu] epoch 01/20 train CE=0.06293, val CE=0.03629, val AP=0.73990, lr=3.00e-04, 8.2s
+    [swiglu] epoch 02/20 train CE=0.03726, val CE=0.03139, val AP=0.73321, lr=2.98e-04, 8.2s
+    [swiglu] epoch 03/20 train CE=0.03361, val CE=0.02877, val AP=0.78830, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.02996, val CE=0.03051, val AP=0.77887, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02668, val CE=0.02840, val AP=0.80565, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02493, val CE=0.02905, val AP=0.79476, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02104, val CE=0.02726, val AP=0.81280, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.01999, val CE=0.02830, val AP=0.80789, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01539, val CE=0.02732, val AP=0.83036, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01344, val CE=0.03455, val AP=0.82385, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01087, val CE=0.03873, val AP=0.82442, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.01015, val CE=0.04138, val AP=0.82502, lr=1.22e-04, 8.1s
+    [swiglu] epoch 13/20 train CE=0.00677, val CE=0.04337, val AP=0.83144, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00484, val CE=0.04492, val AP=0.84352, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00417, val CE=0.04258, val AP=0.83549, lr=6.09e-05, 8.0s
+    [swiglu] epoch 16/20 train CE=0.00291, val CE=0.04727, val AP=0.84416, lr=4.50e-05, 8.0s
+    [swiglu] epoch 17/20 train CE=0.00228, val CE=0.05091, val AP=0.84445, lr=3.21e-05, 8.0s
+    [swiglu] epoch 18/20 train CE=0.00182, val CE=0.05069, val AP=0.83698, lr=2.27e-05, 8.0s
+    [swiglu] epoch 19/20 train CE=0.00145, val CE=0.05357, val AP=0.84156, lr=1.69e-05, 8.1s
+    [swiglu] epoch 20/20 train CE=0.00110, val CE=0.05485, val AP=0.83864, lr=1.50e-05, 8.2s
+  -> SWIGLU: best epoch=17, val threshold=0.968035, TEST precision=0.9492, recall=0.7887, F1=0.8615, AP=0.8033, (TP=56, FP=3, FN=15, TN=42485)
+
+
+=== Seed 46 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07886, val CE=0.04039, val AP=0.75945, lr=3.00e-04, 7.4s
+    [gelu  ] epoch 02/20 train CE=0.03837, val CE=0.03600, val AP=0.73269, lr=2.98e-04, 7.5s
+    [gelu  ] epoch 03/20 train CE=0.03385, val CE=0.03265, val AP=0.78006, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03263, val CE=0.03187, val AP=0.80835, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03019, val CE=0.03125, val AP=0.80734, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02872, val CE=0.03108, val AP=0.82055, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02827, val CE=0.03117, val AP=0.80904, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02575, val CE=0.03133, val AP=0.82387, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02409, val CE=0.03334, val AP=0.81854, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02219, val CE=0.03096, val AP=0.81886, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01933, val CE=0.03404, val AP=0.81824, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01693, val CE=0.03571, val AP=0.80277, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01493, val CE=0.03458, val AP=0.80524, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01215, val CE=0.04036, val AP=0.81384, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.00963, val CE=0.04546, val AP=0.78794, lr=6.09e-05, 7.3s
+    Early stopping gelu (best epoch 8).
+  -> GELU: best epoch=8, val threshold=0.908302, TEST precision=0.8333, recall=0.8451, F1=0.8392, AP=0.8432, (TP=60, FP=12, FN=11, TN=42476)
+
+    [swiglu] epoch 01/20 train CE=0.10022, val CE=0.04065, val AP=0.67205, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03856, val CE=0.03686, val AP=0.77658, lr=2.98e-04, 8.1s
+    [swiglu] epoch 03/20 train CE=0.03404, val CE=0.03605, val AP=0.77128, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.03135, val CE=0.03285, val AP=0.80253, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02753, val CE=0.03146, val AP=0.81931, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02553, val CE=0.03400, val AP=0.82780, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02462, val CE=0.03821, val AP=0.81167, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02167, val CE=0.03563, val AP=0.81721, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01600, val CE=0.03973, val AP=0.81532, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01412, val CE=0.04117, val AP=0.81404, lr=1.69e-04, 8.1s
+    [swiglu] epoch 11/20 train CE=0.01146, val CE=0.04435, val AP=0.81645, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.01005, val CE=0.04813, val AP=0.81133, lr=1.22e-04, 7.9s
+    [swiglu] epoch 13/20 train CE=0.00586, val CE=0.05201, val AP=0.77525, lr=1.00e-04, 7.9s
+    Early stopping swiglu (best epoch 6).
+  -> SWIGLU: best epoch=6, val threshold=0.865260, TEST precision=0.8451, recall=0.8451, F1=0.8451, AP=0.8558, (TP=60, FP=11, FN=11, TN=42477)
+
+
+=== Seed 47 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.11020, val CE=0.03814, val AP=0.83531, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03808, val CE=0.02601, val AP=0.87275, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03417, val CE=0.02555, val AP=0.85368, lr=2.92e-04, 7.4s
+    [gelu  ] epoch 04/20 train CE=0.03195, val CE=0.02362, val AP=0.87993, lr=2.83e-04, 7.4s
+    [gelu  ] epoch 05/20 train CE=0.03061, val CE=0.03039, val AP=0.84486, lr=2.70e-04, 7.5s
+    [gelu  ] epoch 06/20 train CE=0.02860, val CE=0.02667, val AP=0.84894, lr=2.54e-04, 7.5s
+    [gelu  ] epoch 07/20 train CE=0.02658, val CE=0.02376, val AP=0.88555, lr=2.35e-04, 7.5s
+    [gelu  ] epoch 08/20 train CE=0.02530, val CE=0.02481, val AP=0.83414, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.02351, val CE=0.02673, val AP=0.88717, lr=1.92e-04, 7.5s
+    [gelu  ] epoch 10/20 train CE=0.02138, val CE=0.02494, val AP=0.85660, lr=1.69e-04, 7.5s
+    [gelu  ] epoch 11/20 train CE=0.02015, val CE=0.02856, val AP=0.86751, lr=1.46e-04, 7.4s
+    [gelu  ] epoch 12/20 train CE=0.01715, val CE=0.03285, val AP=0.86406, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01479, val CE=0.03199, val AP=0.86703, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01239, val CE=0.03634, val AP=0.86776, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.01183, val CE=0.03759, val AP=0.85830, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00908, val CE=0.04063, val AP=0.85108, lr=4.50e-05, 7.3s
+    Early stopping gelu (best epoch 9).
+  -> GELU: best epoch=9, val threshold=0.615009, TEST precision=0.8361, recall=0.7183, F1=0.7727, AP=0.7356, (TP=51, FP=10, FN=20, TN=42478)
+
+    [swiglu] epoch 01/20 train CE=0.08870, val CE=0.02929, val AP=0.87627, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03758, val CE=0.02491, val AP=0.86614, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03288, val CE=0.02997, val AP=0.83406, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.03039, val CE=0.02520, val AP=0.88542, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02845, val CE=0.02739, val AP=0.88098, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02490, val CE=0.02835, val AP=0.76124, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02265, val CE=0.02494, val AP=0.89470, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.02154, val CE=0.02560, val AP=0.88419, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01848, val CE=0.03174, val AP=0.87342, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01624, val CE=0.02734, val AP=0.88619, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01269, val CE=0.03200, val AP=0.88688, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.00973, val CE=0.03499, val AP=0.87690, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00745, val CE=0.03575, val AP=0.85884, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00646, val CE=0.03858, val AP=0.86805, lr=7.95e-05, 8.0s
+    Early stopping swiglu (best epoch 7).
+  -> SWIGLU: best epoch=7, val threshold=0.967151, TEST precision=0.8475, recall=0.7042, F1=0.7692, AP=0.7806, (TP=50, FP=9, FN=21, TN=42479)
+
+
+=== Seed 48 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.08303, val CE=0.03876, val AP=0.72117, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03949, val CE=0.03622, val AP=0.72687, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03321, val CE=0.02832, val AP=0.74876, lr=2.92e-04, 7.4s
+    [gelu  ] epoch 04/20 train CE=0.03137, val CE=0.02992, val AP=0.76714, lr=2.83e-04, 7.5s
+    [gelu  ] epoch 05/20 train CE=0.02898, val CE=0.02894, val AP=0.75610, lr=2.70e-04, 7.5s
+    [gelu  ] epoch 06/20 train CE=0.02774, val CE=0.03039, val AP=0.70630, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02672, val CE=0.03099, val AP=0.77958, lr=2.35e-04, 7.4s
+    [gelu  ] epoch 08/20 train CE=0.02382, val CE=0.03359, val AP=0.78198, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02374, val CE=0.03208, val AP=0.76652, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02318, val CE=0.03431, val AP=0.77500, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.02030, val CE=0.03541, val AP=0.74627, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01784, val CE=0.03324, val AP=0.75607, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01554, val CE=0.03869, val AP=0.75117, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01328, val CE=0.04123, val AP=0.74530, lr=7.95e-05, 7.4s
+    [gelu  ] epoch 15/20 train CE=0.01049, val CE=0.04479, val AP=0.73401, lr=6.09e-05, 7.4s
+    Early stopping gelu (best epoch 8).
+  -> GELU: best epoch=8, val threshold=0.964600, TEST precision=0.8594, recall=0.7746, F1=0.8148, AP=0.7672, (TP=55, FP=9, FN=16, TN=42479)
+
+    [swiglu] epoch 01/20 train CE=0.08386, val CE=0.03983, val AP=0.78043, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03778, val CE=0.03999, val AP=0.77464, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03249, val CE=0.03138, val AP=0.78982, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02993, val CE=0.03127, val AP=0.80171, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02739, val CE=0.03100, val AP=0.78657, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02471, val CE=0.03253, val AP=0.79678, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02299, val CE=0.03251, val AP=0.80013, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02037, val CE=0.03905, val AP=0.79976, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01916, val CE=0.03741, val AP=0.80777, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01574, val CE=0.04727, val AP=0.80617, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.01329, val CE=0.04116, val AP=0.82024, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.01052, val CE=0.04595, val AP=0.80981, lr=1.22e-04, 7.9s
+    [swiglu] epoch 13/20 train CE=0.00798, val CE=0.05050, val AP=0.81753, lr=1.00e-04, 7.9s
+    [swiglu] epoch 14/20 train CE=0.00508, val CE=0.05329, val AP=0.82480, lr=7.95e-05, 7.9s
+    [swiglu] epoch 15/20 train CE=0.00329, val CE=0.05784, val AP=0.81026, lr=6.09e-05, 7.9s
+    [swiglu] epoch 16/20 train CE=0.00347, val CE=0.05575, val AP=0.81827, lr=4.50e-05, 7.9s
+    [swiglu] epoch 17/20 train CE=0.00251, val CE=0.05689, val AP=0.81289, lr=3.21e-05, 7.9s
+    [swiglu] epoch 18/20 train CE=0.00183, val CE=0.05696, val AP=0.81837, lr=2.27e-05, 7.9s
+    [swiglu] epoch 19/20 train CE=0.00154, val CE=0.05777, val AP=0.81809, lr=1.69e-05, 7.9s
+    [swiglu] epoch 20/20 train CE=0.00134, val CE=0.05840, val AP=0.81503, lr=1.50e-05, 7.9s
+  -> SWIGLU: best epoch=14, val threshold=0.997367, TEST precision=0.9815, recall=0.7465, F1=0.8480, AP=0.8326, (TP=53, FP=1, FN=18, TN=42487)
+
+
+=== Seed 49 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.06660, val CE=0.04133, val AP=0.76494, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03755, val CE=0.04380, val AP=0.78524, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03442, val CE=0.03768, val AP=0.81852, lr=2.92e-04, 7.4s
+    [gelu  ] epoch 04/20 train CE=0.03138, val CE=0.03594, val AP=0.82802, lr=2.83e-04, 7.5s
+    [gelu  ] epoch 05/20 train CE=0.02955, val CE=0.04032, val AP=0.79073, lr=2.70e-04, 7.6s
+    [gelu  ] epoch 06/20 train CE=0.02625, val CE=0.03743, val AP=0.83178, lr=2.54e-04, 7.6s
+    [gelu  ] epoch 07/20 train CE=0.02467, val CE=0.03549, val AP=0.83185, lr=2.35e-04, 7.5s
+    [gelu  ] epoch 08/20 train CE=0.02239, val CE=0.03881, val AP=0.81544, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02108, val CE=0.03840, val AP=0.77942, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.01847, val CE=0.04084, val AP=0.82986, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01834, val CE=0.03848, val AP=0.81533, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01564, val CE=0.04134, val AP=0.83065, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01456, val CE=0.04208, val AP=0.82611, lr=1.00e-04, 7.4s
+    [gelu  ] epoch 14/20 train CE=0.01317, val CE=0.04352, val AP=0.83397, lr=7.95e-05, 7.5s
+    [gelu  ] epoch 15/20 train CE=0.00962, val CE=0.04548, val AP=0.83246, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00686, val CE=0.04853, val AP=0.82396, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00545, val CE=0.04861, val AP=0.82991, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00451, val CE=0.04887, val AP=0.82981, lr=2.27e-05, 7.3s
+    [gelu  ] epoch 19/20 train CE=0.00358, val CE=0.05083, val AP=0.82809, lr=1.69e-05, 7.3s
+    [gelu  ] epoch 20/20 train CE=0.00310, val CE=0.05202, val AP=0.82872, lr=1.50e-05, 7.3s
+  -> GELU: best epoch=14, val threshold=0.987591, TEST precision=0.7746, recall=0.7746, F1=0.7746, AP=0.7891, (TP=55, FP=16, FN=16, TN=42472)
+
+    [swiglu] epoch 01/20 train CE=0.05870, val CE=0.03830, val AP=0.83294, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03618, val CE=0.04180, val AP=0.81781, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03572, val CE=0.03731, val AP=0.83003, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.03039, val CE=0.03547, val AP=0.83554, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02849, val CE=0.03783, val AP=0.83582, lr=2.70e-04, 8.1s
+    [swiglu] epoch 06/20 train CE=0.02455, val CE=0.03836, val AP=0.83195, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02294, val CE=0.03805, val AP=0.83711, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.01978, val CE=0.03873, val AP=0.84087, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01583, val CE=0.04205, val AP=0.83276, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01408, val CE=0.04810, val AP=0.83640, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01230, val CE=0.04856, val AP=0.83348, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.00925, val CE=0.05092, val AP=0.83022, lr=1.22e-04, 8.1s
+    [swiglu] epoch 13/20 train CE=0.00722, val CE=0.04978, val AP=0.84340, lr=1.00e-04, 8.2s
+    [swiglu] epoch 14/20 train CE=0.00444, val CE=0.05248, val AP=0.83662, lr=7.95e-05, 8.2s
+    [swiglu] epoch 15/20 train CE=0.00320, val CE=0.05526, val AP=0.82505, lr=6.09e-05, 8.0s
+    [swiglu] epoch 16/20 train CE=0.00303, val CE=0.05387, val AP=0.84018, lr=4.50e-05, 8.0s
+    [swiglu] epoch 17/20 train CE=0.00204, val CE=0.05527, val AP=0.83706, lr=3.21e-05, 8.0s
+    [swiglu] epoch 18/20 train CE=0.00140, val CE=0.05609, val AP=0.84214, lr=2.27e-05, 8.0s
+    [swiglu] epoch 19/20 train CE=0.00106, val CE=0.05749, val AP=0.84189, lr=1.69e-05, 8.1s
+    [swiglu] epoch 20/20 train CE=0.00095, val CE=0.05740, val AP=0.84506, lr=1.50e-05, 8.1s
+  -> SWIGLU: best epoch=20, val threshold=0.884996, TEST precision=0.8060, recall=0.7606, F1=0.7826, AP=0.7778, (TP=54, FP=13, FN=17, TN=42475)
+
+
+=== Seed 50 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.05572, val CE=0.03803, val AP=0.74438, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03766, val CE=0.03349, val AP=0.77123, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03303, val CE=0.03894, val AP=0.74667, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03184, val CE=0.03466, val AP=0.70809, lr=2.83e-04, 7.5s
+    [gelu  ] epoch 05/20 train CE=0.02838, val CE=0.03329, val AP=0.74690, lr=2.70e-04, 7.5s
+    [gelu  ] epoch 06/20 train CE=0.02719, val CE=0.03421, val AP=0.68888, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02594, val CE=0.03542, val AP=0.75094, lr=2.35e-04, 7.4s
+    [gelu  ] epoch 08/20 train CE=0.02339, val CE=0.03158, val AP=0.76962, lr=2.15e-04, 7.5s
+    [gelu  ] epoch 09/20 train CE=0.02212, val CE=0.03392, val AP=0.67030, lr=1.92e-04, 7.4s
+    Early stopping gelu (best epoch 2).
+  -> GELU: best epoch=2, val threshold=0.990774, TEST precision=0.7969, recall=0.7183, F1=0.7556, AP=0.6904, (TP=51, FP=13, FN=20, TN=42475)
+
+    [swiglu] epoch 01/20 train CE=0.11724, val CE=0.03844, val AP=0.77614, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03665, val CE=0.03371, val AP=0.78933, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03293, val CE=0.03519, val AP=0.81049, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.03150, val CE=0.03518, val AP=0.81488, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02651, val CE=0.03236, val AP=0.81055, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02525, val CE=0.03283, val AP=0.78212, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02299, val CE=0.03289, val AP=0.82182, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02012, val CE=0.03796, val AP=0.78799, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01942, val CE=0.03239, val AP=0.81734, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01536, val CE=0.03827, val AP=0.82101, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01220, val CE=0.03886, val AP=0.81770, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.01074, val CE=0.04387, val AP=0.82566, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00787, val CE=0.04843, val AP=0.82722, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00603, val CE=0.05002, val AP=0.84210, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00405, val CE=0.05861, val AP=0.82372, lr=6.09e-05, 7.9s
+    [swiglu] epoch 16/20 train CE=0.00222, val CE=0.06349, val AP=0.81256, lr=4.50e-05, 8.0s
+    [swiglu] epoch 17/20 train CE=0.00170, val CE=0.06567, val AP=0.81414, lr=3.21e-05, 8.0s
+    [swiglu] epoch 18/20 train CE=0.00127, val CE=0.06678, val AP=0.81150, lr=2.27e-05, 8.0s
+    [swiglu] epoch 19/20 train CE=0.00095, val CE=0.06777, val AP=0.81042, lr=1.69e-05, 8.0s
+    [swiglu] epoch 20/20 train CE=0.00084, val CE=0.06816, val AP=0.81078, lr=1.50e-05, 8.0s
+  -> SWIGLU: best epoch=14, val threshold=0.918237, TEST precision=0.8689, recall=0.7465, F1=0.8030, AP=0.7302, (TP=53, FP=8, FN=18, TN=42480)
+
+
+=== Seed 51 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.06971, val CE=0.03871, val AP=0.79092, lr=3.00e-04, 7.5s
+    [gelu  ] epoch 02/20 train CE=0.04107, val CE=0.03701, val AP=0.76008, lr=2.98e-04, 7.4s
+    [gelu  ] epoch 03/20 train CE=0.03355, val CE=0.03642, val AP=0.74854, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03064, val CE=0.03417, val AP=0.77018, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03117, val CE=0.03414, val AP=0.80335, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.02684, val CE=0.03508, val AP=0.79478, lr=2.54e-04, 7.4s
+    [gelu  ] epoch 07/20 train CE=0.02556, val CE=0.03238, val AP=0.79825, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02436, val CE=0.03199, val AP=0.80590, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.02223, val CE=0.03794, val AP=0.79749, lr=1.92e-04, 7.4s
+    [gelu  ] epoch 10/20 train CE=0.02005, val CE=0.04121, val AP=0.79530, lr=1.69e-04, 7.6s
+    [gelu  ] epoch 11/20 train CE=0.01842, val CE=0.03671, val AP=0.82998, lr=1.46e-04, 7.5s
+    [gelu  ] epoch 12/20 train CE=0.01606, val CE=0.03774, val AP=0.82010, lr=1.22e-04, 7.5s
+    [gelu  ] epoch 13/20 train CE=0.01209, val CE=0.03979, val AP=0.81551, lr=1.00e-04, 7.5s
+    [gelu  ] epoch 14/20 train CE=0.01042, val CE=0.04345, val AP=0.82443, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.00773, val CE=0.04365, val AP=0.81995, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00692, val CE=0.04648, val AP=0.81721, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00687, val CE=0.04798, val AP=0.81578, lr=3.21e-05, 7.5s
+    [gelu  ] epoch 18/20 train CE=0.00510, val CE=0.05240, val AP=0.80760, lr=2.27e-05, 7.4s
+    Early stopping gelu (best epoch 11).
+  -> GELU: best epoch=11, val threshold=0.976067, TEST precision=0.8235, recall=0.7887, F1=0.8058, AP=0.7949, (TP=56, FP=12, FN=15, TN=42476)
+
+    [swiglu] epoch 01/20 train CE=0.11210, val CE=0.03746, val AP=0.76394, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03934, val CE=0.03779, val AP=0.80738, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03313, val CE=0.03707, val AP=0.78987, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.02953, val CE=0.03321, val AP=0.81037, lr=2.83e-04, 8.1s
+    [swiglu] epoch 05/20 train CE=0.02921, val CE=0.03278, val AP=0.82860, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02506, val CE=0.03898, val AP=0.82561, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02320, val CE=0.03260, val AP=0.84235, lr=2.35e-04, 8.2s
+    [swiglu] epoch 08/20 train CE=0.02016, val CE=0.03877, val AP=0.82629, lr=2.15e-04, 8.2s
+    [swiglu] epoch 09/20 train CE=0.01623, val CE=0.04096, val AP=0.80038, lr=1.92e-04, 8.2s
+    [swiglu] epoch 10/20 train CE=0.01393, val CE=0.04533, val AP=0.81880, lr=1.69e-04, 8.1s
+    [swiglu] epoch 11/20 train CE=0.01050, val CE=0.04782, val AP=0.80745, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.00920, val CE=0.04832, val AP=0.80400, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00585, val CE=0.05086, val AP=0.79952, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00375, val CE=0.05708, val AP=0.79220, lr=7.95e-05, 8.0s
+    Early stopping swiglu (best epoch 7).
+  -> SWIGLU: best epoch=7, val threshold=0.979653, TEST precision=0.8387, recall=0.7324, F1=0.7820, AP=0.8261, (TP=52, FP=10, FN=19, TN=42478)
+
+
+=== Seed 52 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.06741, val CE=0.04162, val AP=0.74978, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.04021, val CE=0.04117, val AP=0.73427, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03342, val CE=0.03762, val AP=0.76315, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03031, val CE=0.03344, val AP=0.75086, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02915, val CE=0.03529, val AP=0.75836, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02743, val CE=0.03593, val AP=0.73762, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02500, val CE=0.03508, val AP=0.77446, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02317, val CE=0.03340, val AP=0.78126, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02249, val CE=0.03120, val AP=0.77173, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02074, val CE=0.03306, val AP=0.78849, lr=1.69e-04, 7.4s
+    [gelu  ] epoch 11/20 train CE=0.01734, val CE=0.03005, val AP=0.81749, lr=1.46e-04, 7.4s
+    [gelu  ] epoch 12/20 train CE=0.01607, val CE=0.04266, val AP=0.74189, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01431, val CE=0.03687, val AP=0.78871, lr=1.00e-04, 7.4s
+    [gelu  ] epoch 14/20 train CE=0.01170, val CE=0.04491, val AP=0.78822, lr=7.95e-05, 7.4s
+    [gelu  ] epoch 15/20 train CE=0.01025, val CE=0.04092, val AP=0.80833, lr=6.09e-05, 7.4s
+    [gelu  ] epoch 16/20 train CE=0.00880, val CE=0.04634, val AP=0.77952, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00620, val CE=0.05177, val AP=0.78367, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00500, val CE=0.05190, val AP=0.78164, lr=2.27e-05, 7.3s
+    Early stopping gelu (best epoch 11).
+  -> GELU: best epoch=11, val threshold=0.985088, TEST precision=0.8551, recall=0.8310, F1=0.8429, AP=0.8154, (TP=59, FP=10, FN=12, TN=42478)
+
+    [swiglu] epoch 01/20 train CE=0.07756, val CE=0.04011, val AP=0.76964, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03873, val CE=0.03754, val AP=0.77633, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03267, val CE=0.03702, val AP=0.77929, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02990, val CE=0.03519, val AP=0.78258, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02735, val CE=0.03486, val AP=0.78668, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02655, val CE=0.04156, val AP=0.74496, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02379, val CE=0.04178, val AP=0.75792, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02092, val CE=0.03422, val AP=0.77757, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01799, val CE=0.04086, val AP=0.74967, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01677, val CE=0.03909, val AP=0.77732, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.01395, val CE=0.03723, val AP=0.75259, lr=1.46e-04, 8.1s
+    [swiglu] epoch 12/20 train CE=0.01020, val CE=0.06087, val AP=0.74885, lr=1.22e-04, 8.0s
+    Early stopping swiglu (best epoch 5).
+  -> SWIGLU: best epoch=5, val threshold=0.799503, TEST precision=0.8082, recall=0.8310, F1=0.8194, AP=0.8018, (TP=59, FP=14, FN=12, TN=42474)
+
+
+=== Seed 53 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.08941, val CE=0.03655, val AP=0.79440, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03794, val CE=0.03632, val AP=0.81165, lr=2.98e-04, 7.4s
+    [gelu  ] epoch 03/20 train CE=0.03552, val CE=0.03599, val AP=0.81330, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03511, val CE=0.03306, val AP=0.81049, lr=2.83e-04, 7.5s
+    [gelu  ] epoch 05/20 train CE=0.03021, val CE=0.03654, val AP=0.79666, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.03009, val CE=0.03338, val AP=0.83001, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02626, val CE=0.03171, val AP=0.82966, lr=2.35e-04, 7.4s
+    [gelu  ] epoch 08/20 train CE=0.02451, val CE=0.03421, val AP=0.82815, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02178, val CE=0.03131, val AP=0.83625, lr=1.92e-04, 7.4s
+    [gelu  ] epoch 10/20 train CE=0.02068, val CE=0.03195, val AP=0.83259, lr=1.69e-04, 7.4s
+    [gelu  ] epoch 11/20 train CE=0.01796, val CE=0.03592, val AP=0.84899, lr=1.46e-04, 7.5s
+    [gelu  ] epoch 12/20 train CE=0.01367, val CE=0.03756, val AP=0.84381, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01198, val CE=0.03914, val AP=0.84440, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.00972, val CE=0.04127, val AP=0.82930, lr=7.95e-05, 7.4s
+    [gelu  ] epoch 15/20 train CE=0.00746, val CE=0.03856, val AP=0.84749, lr=6.09e-05, 7.5s
+    [gelu  ] epoch 16/20 train CE=0.00600, val CE=0.04147, val AP=0.84780, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00529, val CE=0.04299, val AP=0.83052, lr=3.21e-05, 7.4s
+    [gelu  ] epoch 18/20 train CE=0.00463, val CE=0.04169, val AP=0.79597, lr=2.27e-05, 7.3s
+    Early stopping gelu (best epoch 11).
+  -> GELU: best epoch=11, val threshold=0.916730, TEST precision=0.7746, recall=0.7746, F1=0.7746, AP=0.7962, (TP=55, FP=16, FN=16, TN=42472)
+
+    [swiglu] epoch 01/20 train CE=0.06553, val CE=0.04409, val AP=0.78448, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03747, val CE=0.03652, val AP=0.82503, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03424, val CE=0.03835, val AP=0.81148, lr=2.92e-04, 8.1s
+    [swiglu] epoch 04/20 train CE=0.03239, val CE=0.03181, val AP=0.84668, lr=2.83e-04, 8.1s
+    [swiglu] epoch 05/20 train CE=0.02888, val CE=0.03627, val AP=0.83610, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02509, val CE=0.03583, val AP=0.82273, lr=2.54e-04, 8.1s
+    [swiglu] epoch 07/20 train CE=0.02334, val CE=0.03576, val AP=0.82388, lr=2.35e-04, 8.2s
+    [swiglu] epoch 08/20 train CE=0.02155, val CE=0.03376, val AP=0.84878, lr=2.15e-04, 8.2s
+    [swiglu] epoch 09/20 train CE=0.01665, val CE=0.04178, val AP=0.83536, lr=1.92e-04, 8.2s
+    [swiglu] epoch 10/20 train CE=0.01379, val CE=0.04029, val AP=0.83571, lr=1.69e-04, 8.1s
+    [swiglu] epoch 11/20 train CE=0.01123, val CE=0.04280, val AP=0.83469, lr=1.46e-04, 8.2s
+    [swiglu] epoch 12/20 train CE=0.00950, val CE=0.04840, val AP=0.81306, lr=1.22e-04, 8.1s
+    [swiglu] epoch 13/20 train CE=0.00623, val CE=0.04963, val AP=0.81317, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00571, val CE=0.04987, val AP=0.82924, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00374, val CE=0.05251, val AP=0.81848, lr=6.09e-05, 8.1s
+    Early stopping swiglu (best epoch 8).
+  -> SWIGLU: best epoch=8, val threshold=0.983732, TEST precision=0.8088, recall=0.7746, F1=0.7914, AP=0.8204, (TP=55, FP=13, FN=16, TN=42475)
+
+
+=== Seed 54 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07046, val CE=0.07499, val AP=0.64695, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.04216, val CE=0.03954, val AP=0.63925, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03336, val CE=0.03833, val AP=0.64588, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03189, val CE=0.03706, val AP=0.67597, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03022, val CE=0.04038, val AP=0.71279, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02866, val CE=0.03714, val AP=0.73946, lr=2.54e-04, 7.4s
+    [gelu  ] epoch 07/20 train CE=0.02730, val CE=0.03511, val AP=0.75248, lr=2.35e-04, 7.5s
+    [gelu  ] epoch 08/20 train CE=0.02607, val CE=0.03737, val AP=0.69857, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02529, val CE=0.03673, val AP=0.74955, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02304, val CE=0.03667, val AP=0.75041, lr=1.69e-04, 7.4s
+    [gelu  ] epoch 11/20 train CE=0.02094, val CE=0.03696, val AP=0.76008, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01878, val CE=0.04059, val AP=0.75051, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01721, val CE=0.04344, val AP=0.73399, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01427, val CE=0.04471, val AP=0.76727, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.01097, val CE=0.05279, val AP=0.72389, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00935, val CE=0.05978, val AP=0.71548, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00782, val CE=0.05576, val AP=0.74317, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00554, val CE=0.05809, val AP=0.72627, lr=2.27e-05, 7.3s
+    [gelu  ] epoch 19/20 train CE=0.00495, val CE=0.06377, val AP=0.72685, lr=1.69e-05, 7.3s
+    [gelu  ] epoch 20/20 train CE=0.00408, val CE=0.06261, val AP=0.72977, lr=1.50e-05, 7.3s
+  -> GELU: best epoch=14, val threshold=0.905711, TEST precision=0.9062, recall=0.8169, F1=0.8593, AP=0.8540, (TP=58, FP=6, FN=13, TN=42482)
+
+    [swiglu] epoch 01/20 train CE=0.10319, val CE=0.06704, val AP=0.58811, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03718, val CE=0.03605, val AP=0.68404, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03181, val CE=0.03863, val AP=0.64163, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.03018, val CE=0.03508, val AP=0.73545, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02884, val CE=0.03730, val AP=0.73117, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02595, val CE=0.03908, val AP=0.76287, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02424, val CE=0.03364, val AP=0.70978, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.02084, val CE=0.03323, val AP=0.75984, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01806, val CE=0.03932, val AP=0.76916, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01575, val CE=0.04493, val AP=0.73819, lr=1.69e-04, 8.2s
+    [swiglu] epoch 11/20 train CE=0.01323, val CE=0.04391, val AP=0.74483, lr=1.46e-04, 8.2s
+    [swiglu] epoch 12/20 train CE=0.00930, val CE=0.05790, val AP=0.73137, lr=1.22e-04, 8.2s
+    [swiglu] epoch 13/20 train CE=0.00833, val CE=0.06522, val AP=0.68765, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00600, val CE=0.06391, val AP=0.72079, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00486, val CE=0.07571, val AP=0.71658, lr=6.09e-05, 7.9s
+    [swiglu] epoch 16/20 train CE=0.00395, val CE=0.08009, val AP=0.71271, lr=4.50e-05, 7.9s
+    Early stopping swiglu (best epoch 9).
+  -> SWIGLU: best epoch=9, val threshold=0.986071, TEST precision=0.9787, recall=0.6479, F1=0.7797, AP=0.8402, (TP=46, FP=1, FN=25, TN=42487)
+
+
+=== Seed 55 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.08896, val CE=0.04036, val AP=0.77410, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03583, val CE=0.03482, val AP=0.79137, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03389, val CE=0.02640, val AP=0.76668, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03060, val CE=0.02597, val AP=0.77569, lr=2.83e-04, 7.4s
+    [gelu  ] epoch 05/20 train CE=0.02907, val CE=0.02483, val AP=0.77819, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.02833, val CE=0.02513, val AP=0.81336, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02505, val CE=0.02699, val AP=0.84113, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02390, val CE=0.02416, val AP=0.81543, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02205, val CE=0.02381, val AP=0.84087, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02019, val CE=0.03487, val AP=0.81495, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01872, val CE=0.03160, val AP=0.85180, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01641, val CE=0.02826, val AP=0.85098, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01359, val CE=0.03230, val AP=0.85986, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01272, val CE=0.03755, val AP=0.83935, lr=7.95e-05, 7.4s
+    [gelu  ] epoch 15/20 train CE=0.01001, val CE=0.04225, val AP=0.82295, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00860, val CE=0.04627, val AP=0.82097, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00737, val CE=0.05620, val AP=0.79582, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00591, val CE=0.05470, val AP=0.80798, lr=2.27e-05, 7.4s
+    [gelu  ] epoch 19/20 train CE=0.00510, val CE=0.05868, val AP=0.79824, lr=1.69e-05, 7.4s
+    [gelu  ] epoch 20/20 train CE=0.00421, val CE=0.06036, val AP=0.79388, lr=1.50e-05, 7.3s
+    Early stopping gelu (best epoch 13).
+  -> GELU: best epoch=13, val threshold=0.939382, TEST precision=0.7879, recall=0.7324, F1=0.7591, AP=0.6947, (TP=52, FP=14, FN=19, TN=42474)
+
+    [swiglu] epoch 01/20 train CE=0.06949, val CE=0.02999, val AP=0.80024, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03580, val CE=0.03275, val AP=0.83183, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03367, val CE=0.03006, val AP=0.81840, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.02951, val CE=0.02509, val AP=0.76334, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02692, val CE=0.02519, val AP=0.80767, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02652, val CE=0.02554, val AP=0.81751, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02244, val CE=0.03153, val AP=0.83502, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.01939, val CE=0.02923, val AP=0.84073, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01747, val CE=0.02905, val AP=0.81370, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01443, val CE=0.03438, val AP=0.83389, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01226, val CE=0.04257, val AP=0.83784, lr=1.46e-04, 8.1s
+    [swiglu] epoch 12/20 train CE=0.00974, val CE=0.03642, val AP=0.86430, lr=1.22e-04, 8.1s
+    [swiglu] epoch 13/20 train CE=0.00821, val CE=0.04522, val AP=0.83683, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00690, val CE=0.04183, val AP=0.84981, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00451, val CE=0.04444, val AP=0.84408, lr=6.09e-05, 8.0s
+    [swiglu] epoch 16/20 train CE=0.00370, val CE=0.04689, val AP=0.82809, lr=4.50e-05, 8.0s
+    [swiglu] epoch 17/20 train CE=0.00285, val CE=0.05398, val AP=0.82221, lr=3.21e-05, 8.0s
+    [swiglu] epoch 18/20 train CE=0.00206, val CE=0.04993, val AP=0.84127, lr=2.27e-05, 8.0s
+    [swiglu] epoch 19/20 train CE=0.00180, val CE=0.05540, val AP=0.82999, lr=1.69e-05, 8.0s
+    Early stopping swiglu (best epoch 12).
+  -> SWIGLU: best epoch=12, val threshold=0.992949, TEST precision=0.8929, recall=0.7042, F1=0.7874, AP=0.7248, (TP=50, FP=6, FN=21, TN=42482)
+
+
+=== Seed 56 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07530, val CE=0.03829, val AP=0.78352, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03818, val CE=0.02960, val AP=0.81354, lr=2.98e-04, 7.4s
+    [gelu  ] epoch 03/20 train CE=0.03346, val CE=0.03191, val AP=0.80945, lr=2.92e-04, 7.4s
+    [gelu  ] epoch 04/20 train CE=0.03176, val CE=0.03124, val AP=0.80134, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02986, val CE=0.03025, val AP=0.83429, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02766, val CE=0.03184, val AP=0.80746, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02753, val CE=0.02903, val AP=0.83620, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02433, val CE=0.03034, val AP=0.84113, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02330, val CE=0.02983, val AP=0.83403, lr=1.92e-04, 7.4s
+    [gelu  ] epoch 10/20 train CE=0.02104, val CE=0.03260, val AP=0.84051, lr=1.69e-04, 7.5s
+    [gelu  ] epoch 11/20 train CE=0.01824, val CE=0.03248, val AP=0.84901, lr=1.46e-04, 7.5s
+    [gelu  ] epoch 12/20 train CE=0.01712, val CE=0.03500, val AP=0.85213, lr=1.22e-04, 7.5s
+    [gelu  ] epoch 13/20 train CE=0.01435, val CE=0.03475, val AP=0.85337, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01117, val CE=0.03746, val AP=0.84796, lr=7.95e-05, 7.3s
+    [gelu  ] epoch 15/20 train CE=0.00974, val CE=0.03703, val AP=0.85015, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00792, val CE=0.04253, val AP=0.84743, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00602, val CE=0.04410, val AP=0.83540, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00484, val CE=0.04784, val AP=0.83608, lr=2.27e-05, 7.3s
+    [gelu  ] epoch 19/20 train CE=0.00388, val CE=0.05132, val AP=0.83169, lr=1.69e-05, 7.3s
+    [gelu  ] epoch 20/20 train CE=0.00356, val CE=0.04778, val AP=0.84313, lr=1.50e-05, 7.3s
+    Early stopping gelu (best epoch 13).
+  -> GELU: best epoch=13, val threshold=0.979007, TEST precision=0.9333, recall=0.7887, F1=0.8550, AP=0.8187, (TP=56, FP=4, FN=15, TN=42484)
+
+    [swiglu] epoch 01/20 train CE=0.08525, val CE=0.03780, val AP=0.80478, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03714, val CE=0.02895, val AP=0.83024, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03197, val CE=0.03206, val AP=0.83034, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02962, val CE=0.02973, val AP=0.83316, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02688, val CE=0.02892, val AP=0.82777, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02407, val CE=0.03903, val AP=0.78896, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02253, val CE=0.03204, val AP=0.83827, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02027, val CE=0.03724, val AP=0.81580, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01712, val CE=0.03796, val AP=0.82729, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01313, val CE=0.03841, val AP=0.82955, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.01045, val CE=0.05267, val AP=0.80008, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.00964, val CE=0.04736, val AP=0.82682, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00733, val CE=0.05282, val AP=0.80726, lr=1.00e-04, 8.1s
+    [swiglu] epoch 14/20 train CE=0.00450, val CE=0.05746, val AP=0.82489, lr=7.95e-05, 8.1s
+    Early stopping swiglu (best epoch 7).
+  -> SWIGLU: best epoch=7, val threshold=0.992787, TEST precision=0.9423, recall=0.6901, F1=0.7967, AP=0.8269, (TP=49, FP=3, FN=22, TN=42485)
+
+
+=== Seed 57 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.06662, val CE=0.06950, val AP=0.57020, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03688, val CE=0.04777, val AP=0.67932, lr=2.98e-04, 7.4s
+    [gelu  ] epoch 03/20 train CE=0.03161, val CE=0.04109, val AP=0.73422, lr=2.92e-04, 7.4s
+    [gelu  ] epoch 04/20 train CE=0.03007, val CE=0.04451, val AP=0.70804, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02759, val CE=0.03696, val AP=0.76328, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.02559, val CE=0.04157, val AP=0.72875, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02505, val CE=0.04166, val AP=0.72198, lr=2.35e-04, 7.4s
+    [gelu  ] epoch 08/20 train CE=0.02310, val CE=0.04059, val AP=0.77258, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.02112, val CE=0.03824, val AP=0.75421, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.01860, val CE=0.04498, val AP=0.78194, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01720, val CE=0.04177, val AP=0.77187, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01527, val CE=0.04729, val AP=0.76899, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01154, val CE=0.04841, val AP=0.75533, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.00980, val CE=0.05664, val AP=0.76861, lr=7.95e-05, 7.5s
+    [gelu  ] epoch 15/20 train CE=0.00787, val CE=0.05821, val AP=0.77662, lr=6.09e-05, 7.4s
+    [gelu  ] epoch 16/20 train CE=0.00666, val CE=0.06062, val AP=0.77017, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00584, val CE=0.06072, val AP=0.77434, lr=3.21e-05, 7.3s
+    Early stopping gelu (best epoch 10).
+  -> GELU: best epoch=10, val threshold=0.852669, TEST precision=0.8657, recall=0.8169, F1=0.8406, AP=0.8040, (TP=58, FP=9, FN=13, TN=42479)
+
+    [swiglu] epoch 01/20 train CE=0.07934, val CE=0.06422, val AP=0.62035, lr=3.00e-04, 8.0s
+    [swiglu] epoch 02/20 train CE=0.03504, val CE=0.04394, val AP=0.72757, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03130, val CE=0.03925, val AP=0.78087, lr=2.92e-04, 8.2s
+    [swiglu] epoch 04/20 train CE=0.02801, val CE=0.04301, val AP=0.78203, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02497, val CE=0.03417, val AP=0.79613, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02215, val CE=0.04359, val AP=0.79670, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02153, val CE=0.04236, val AP=0.76200, lr=2.35e-04, 8.0s
+    [swiglu] epoch 08/20 train CE=0.01724, val CE=0.05029, val AP=0.76954, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01536, val CE=0.04748, val AP=0.77877, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01157, val CE=0.05191, val AP=0.79343, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.00764, val CE=0.05996, val AP=0.78952, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.00740, val CE=0.06015, val AP=0.78670, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00495, val CE=0.06480, val AP=0.76021, lr=1.00e-04, 8.0s
+    Early stopping swiglu (best epoch 6).
+  -> SWIGLU: best epoch=6, val threshold=0.793865, TEST precision=0.7564, recall=0.8310, F1=0.7919, AP=0.8121, (TP=59, FP=19, FN=12, TN=42469)
+
+
+=== Seed 58 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.10094, val CE=0.03927, val AP=0.70063, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03955, val CE=0.03294, val AP=0.76916, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03436, val CE=0.02984, val AP=0.78898, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.03169, val CE=0.03433, val AP=0.80739, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02956, val CE=0.02878, val AP=0.82679, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02841, val CE=0.03290, val AP=0.77975, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02646, val CE=0.02909, val AP=0.82592, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02482, val CE=0.02886, val AP=0.80050, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02358, val CE=0.03419, val AP=0.76072, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.02355, val CE=0.02815, val AP=0.80878, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01962, val CE=0.03396, val AP=0.82344, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01790, val CE=0.03107, val AP=0.80470, lr=1.22e-04, 7.3s
+    Early stopping gelu (best epoch 5).
+  -> GELU: best epoch=5, val threshold=0.951091, TEST precision=0.8852, recall=0.7606, F1=0.8182, AP=0.7682, (TP=54, FP=7, FN=17, TN=42481)
+
+    [swiglu] epoch 01/20 train CE=0.08405, val CE=0.04254, val AP=0.71300, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03790, val CE=0.03432, val AP=0.75263, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03307, val CE=0.02883, val AP=0.78556, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02875, val CE=0.03473, val AP=0.81274, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02584, val CE=0.02834, val AP=0.81748, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02414, val CE=0.03112, val AP=0.78421, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02146, val CE=0.03190, val AP=0.82474, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.01870, val CE=0.03215, val AP=0.80318, lr=2.15e-04, 7.9s
+    [swiglu] epoch 09/20 train CE=0.01881, val CE=0.03398, val AP=0.80275, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01613, val CE=0.03424, val AP=0.78741, lr=1.69e-04, 7.9s
+    [swiglu] epoch 11/20 train CE=0.01141, val CE=0.04025, val AP=0.82409, lr=1.46e-04, 7.9s
+    [swiglu] epoch 12/20 train CE=0.01016, val CE=0.03578, val AP=0.83180, lr=1.22e-04, 7.9s
+    [swiglu] epoch 13/20 train CE=0.00751, val CE=0.04302, val AP=0.82102, lr=1.00e-04, 7.9s
+    [swiglu] epoch 14/20 train CE=0.00732, val CE=0.04184, val AP=0.81636, lr=7.95e-05, 7.9s
+    [swiglu] epoch 15/20 train CE=0.00443, val CE=0.04238, val AP=0.82615, lr=6.09e-05, 8.0s
+    [swiglu] epoch 16/20 train CE=0.00317, val CE=0.04332, val AP=0.83730, lr=4.50e-05, 7.9s
+    [swiglu] epoch 17/20 train CE=0.00250, val CE=0.04708, val AP=0.80422, lr=3.21e-05, 7.9s
+    [swiglu] epoch 18/20 train CE=0.00204, val CE=0.04841, val AP=0.79928, lr=2.27e-05, 7.9s
+    [swiglu] epoch 19/20 train CE=0.00185, val CE=0.04884, val AP=0.80518, lr=1.69e-05, 7.9s
+    [swiglu] epoch 20/20 train CE=0.00154, val CE=0.05037, val AP=0.80023, lr=1.50e-05, 7.9s
+  -> SWIGLU: best epoch=16, val threshold=0.980264, TEST precision=0.8710, recall=0.7606, F1=0.8120, AP=0.7812, (TP=54, FP=8, FN=17, TN=42480)
+
+
+=== Seed 59 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.08795, val CE=0.02809, val AP=0.73379, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03874, val CE=0.02615, val AP=0.79590, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03782, val CE=0.02934, val AP=0.80899, lr=2.92e-04, 7.5s
+    [gelu  ] epoch 04/20 train CE=0.03419, val CE=0.02333, val AP=0.84197, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.03066, val CE=0.02406, val AP=0.82382, lr=2.70e-04, 7.4s
+    [gelu  ] epoch 06/20 train CE=0.02822, val CE=0.02386, val AP=0.82015, lr=2.54e-04, 7.6s
+    [gelu  ] epoch 07/20 train CE=0.02832, val CE=0.02345, val AP=0.79129, lr=2.35e-04, 7.5s
+    [gelu  ] epoch 08/20 train CE=0.02563, val CE=0.02720, val AP=0.84679, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02424, val CE=0.02560, val AP=0.83190, lr=1.92e-04, 7.4s
+    [gelu  ] epoch 10/20 train CE=0.02026, val CE=0.02284, val AP=0.85797, lr=1.69e-04, 7.5s
+    [gelu  ] epoch 11/20 train CE=0.01768, val CE=0.03155, val AP=0.82349, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01516, val CE=0.02573, val AP=0.85868, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01417, val CE=0.03036, val AP=0.84438, lr=1.00e-04, 7.5s
+    [gelu  ] epoch 14/20 train CE=0.01111, val CE=0.03092, val AP=0.84567, lr=7.95e-05, 7.4s
+    [gelu  ] epoch 15/20 train CE=0.00882, val CE=0.03080, val AP=0.84912, lr=6.09e-05, 7.3s
+    [gelu  ] epoch 16/20 train CE=0.00702, val CE=0.04039, val AP=0.83499, lr=4.50e-05, 7.3s
+    [gelu  ] epoch 17/20 train CE=0.00585, val CE=0.04487, val AP=0.81637, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00486, val CE=0.04746, val AP=0.81890, lr=2.27e-05, 7.4s
+    [gelu  ] epoch 19/20 train CE=0.00390, val CE=0.04867, val AP=0.81122, lr=1.69e-05, 7.4s
+    Early stopping gelu (best epoch 12).
+  -> GELU: best epoch=12, val threshold=0.961779, TEST precision=0.8571, recall=0.8451, F1=0.8511, AP=0.8490, (TP=60, FP=10, FN=11, TN=42478)
+
+    [swiglu] epoch 01/20 train CE=0.07842, val CE=0.02689, val AP=0.71709, lr=3.00e-04, 8.3s
+    [swiglu] epoch 02/20 train CE=0.03837, val CE=0.02580, val AP=0.83601, lr=2.98e-04, 8.2s
+    [swiglu] epoch 03/20 train CE=0.03756, val CE=0.02751, val AP=0.81894, lr=2.92e-04, 8.2s
+    [swiglu] epoch 04/20 train CE=0.03242, val CE=0.02409, val AP=0.83764, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02868, val CE=0.02618, val AP=0.82126, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02533, val CE=0.02385, val AP=0.83591, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.02501, val CE=0.03330, val AP=0.80793, lr=2.35e-04, 8.1s
+    [swiglu] epoch 08/20 train CE=0.02129, val CE=0.02519, val AP=0.83620, lr=2.15e-04, 8.2s
+    [swiglu] epoch 09/20 train CE=0.01880, val CE=0.02761, val AP=0.81270, lr=1.92e-04, 8.0s
+    [swiglu] epoch 10/20 train CE=0.01598, val CE=0.03231, val AP=0.82016, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.01246, val CE=0.04029, val AP=0.81217, lr=1.46e-04, 8.1s
+    Early stopping swiglu (best epoch 4).
+  -> SWIGLU: best epoch=4, val threshold=0.949411, TEST precision=0.8657, recall=0.8169, F1=0.8406, AP=0.8251, (TP=58, FP=9, FN=13, TN=42479)
+
+
+=== Seed 60 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.11866, val CE=0.05862, val AP=0.53671, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03600, val CE=0.05022, val AP=0.63060, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03108, val CE=0.05576, val AP=0.65897, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.02923, val CE=0.04847, val AP=0.66416, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02650, val CE=0.05838, val AP=0.64109, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02658, val CE=0.05240, val AP=0.69286, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02299, val CE=0.04842, val AP=0.74624, lr=2.35e-04, 7.3s
+    [gelu  ] epoch 08/20 train CE=0.02340, val CE=0.05690, val AP=0.73054, lr=2.15e-04, 7.3s
+    [gelu  ] epoch 09/20 train CE=0.02034, val CE=0.04878, val AP=0.69678, lr=1.92e-04, 7.3s
+    [gelu  ] epoch 10/20 train CE=0.01862, val CE=0.05212, val AP=0.71070, lr=1.69e-04, 7.3s
+    [gelu  ] epoch 11/20 train CE=0.01780, val CE=0.04985, val AP=0.71929, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01590, val CE=0.05446, val AP=0.72398, lr=1.22e-04, 7.3s
+    [gelu  ] epoch 13/20 train CE=0.01445, val CE=0.05135, val AP=0.70596, lr=1.00e-04, 7.3s
+    [gelu  ] epoch 14/20 train CE=0.01330, val CE=0.05555, val AP=0.70432, lr=7.95e-05, 7.3s
+    Early stopping gelu (best epoch 7).
+  -> GELU: best epoch=7, val threshold=0.993505, TEST precision=0.8800, recall=0.6197, F1=0.7273, AP=0.8199, (TP=44, FP=6, FN=27, TN=42482)
+
+    [swiglu] epoch 01/20 train CE=0.12427, val CE=0.06764, val AP=0.61809, lr=3.00e-04, 7.9s
+    [swiglu] epoch 02/20 train CE=0.03685, val CE=0.04906, val AP=0.67605, lr=2.98e-04, 7.9s
+    [swiglu] epoch 03/20 train CE=0.03069, val CE=0.05917, val AP=0.74500, lr=2.92e-04, 7.9s
+    [swiglu] epoch 04/20 train CE=0.02845, val CE=0.05199, val AP=0.73768, lr=2.83e-04, 7.9s
+    [swiglu] epoch 05/20 train CE=0.02508, val CE=0.05537, val AP=0.74257, lr=2.70e-04, 7.9s
+    [swiglu] epoch 06/20 train CE=0.02384, val CE=0.05479, val AP=0.73127, lr=2.54e-04, 7.9s
+    [swiglu] epoch 07/20 train CE=0.02060, val CE=0.05033, val AP=0.71745, lr=2.35e-04, 7.9s
+    [swiglu] epoch 08/20 train CE=0.02087, val CE=0.06264, val AP=0.72199, lr=2.15e-04, 8.0s
+    [swiglu] epoch 09/20 train CE=0.01726, val CE=0.05205, val AP=0.72940, lr=1.92e-04, 7.9s
+    [swiglu] epoch 10/20 train CE=0.01411, val CE=0.05802, val AP=0.72585, lr=1.69e-04, 7.9s
+    Early stopping swiglu (best epoch 3).
+  -> SWIGLU: best epoch=3, val threshold=0.995088, TEST precision=0.8909, recall=0.6901, F1=0.7778, AP=0.8117, (TP=49, FP=6, FN=22, TN=42482)
+
+
+=== Seed 61 ===
+  Rows: 284,807 -> 283,726 after deduplication
+  train: 198,608 examples; fraud=331
+  val  : 42,559 examples; fraud=71
+  test : 42,559 examples; fraud=71
+  Training examples: normal=198,277, fraud=331; positive loss weight=24.475
+  GELU hidden=384 params=453,602; SwiGLU hidden=256 params=454,114; gap=0.113%; shared tensors synchronized=39
+    [gelu  ] epoch 01/20 train CE=0.07130, val CE=0.04680, val AP=0.73517, lr=3.00e-04, 7.3s
+    [gelu  ] epoch 02/20 train CE=0.03445, val CE=0.03988, val AP=0.69432, lr=2.98e-04, 7.3s
+    [gelu  ] epoch 03/20 train CE=0.03118, val CE=0.03951, val AP=0.73852, lr=2.92e-04, 7.3s
+    [gelu  ] epoch 04/20 train CE=0.02963, val CE=0.03464, val AP=0.73204, lr=2.83e-04, 7.3s
+    [gelu  ] epoch 05/20 train CE=0.02736, val CE=0.03577, val AP=0.71608, lr=2.70e-04, 7.3s
+    [gelu  ] epoch 06/20 train CE=0.02586, val CE=0.03706, val AP=0.75738, lr=2.54e-04, 7.3s
+    [gelu  ] epoch 07/20 train CE=0.02306, val CE=0.03378, val AP=0.72585, lr=2.35e-04, 7.4s
+    [gelu  ] epoch 08/20 train CE=0.02174, val CE=0.03328, val AP=0.74987, lr=2.15e-04, 7.4s
+    [gelu  ] epoch 09/20 train CE=0.01894, val CE=0.03820, val AP=0.77793, lr=1.92e-04, 7.4s
+    [gelu  ] epoch 10/20 train CE=0.01879, val CE=0.04203, val AP=0.76577, lr=1.69e-04, 7.6s
+    [gelu  ] epoch 11/20 train CE=0.01488, val CE=0.03696, val AP=0.76298, lr=1.46e-04, 7.3s
+    [gelu  ] epoch 12/20 train CE=0.01433, val CE=0.04296, val AP=0.77926, lr=1.22e-04, 7.4s
+    [gelu  ] epoch 13/20 train CE=0.01194, val CE=0.04659, val AP=0.76972, lr=1.00e-04, 7.4s
+    [gelu  ] epoch 14/20 train CE=0.00932, val CE=0.05180, val AP=0.75066, lr=7.95e-05, 7.5s
+    [gelu  ] epoch 15/20 train CE=0.00758, val CE=0.04993, val AP=0.77689, lr=6.09e-05, 7.5s
+    [gelu  ] epoch 16/20 train CE=0.00579, val CE=0.05557, val AP=0.77141, lr=4.50e-05, 7.4s
+    [gelu  ] epoch 17/20 train CE=0.00450, val CE=0.05818, val AP=0.76701, lr=3.21e-05, 7.3s
+    [gelu  ] epoch 18/20 train CE=0.00341, val CE=0.05888, val AP=0.76405, lr=2.27e-05, 7.4s
+    [gelu  ] epoch 19/20 train CE=0.00268, val CE=0.05999, val AP=0.76601, lr=1.69e-05, 7.5s
+    Early stopping gelu (best epoch 12).
+  -> GELU: best epoch=12, val threshold=0.982645, TEST precision=0.8154, recall=0.7465, F1=0.7794, AP=0.7829, (TP=53, FP=12, FN=18, TN=42476)
+
+    [swiglu] epoch 01/20 train CE=0.08227, val CE=0.04444, val AP=0.78177, lr=3.00e-04, 8.1s
+    [swiglu] epoch 02/20 train CE=0.03307, val CE=0.03888, val AP=0.79162, lr=2.98e-04, 8.0s
+    [swiglu] epoch 03/20 train CE=0.03056, val CE=0.04253, val AP=0.76280, lr=2.92e-04, 8.0s
+    [swiglu] epoch 04/20 train CE=0.02806, val CE=0.03607, val AP=0.78768, lr=2.83e-04, 8.0s
+    [swiglu] epoch 05/20 train CE=0.02325, val CE=0.03961, val AP=0.76995, lr=2.70e-04, 8.0s
+    [swiglu] epoch 06/20 train CE=0.02138, val CE=0.03934, val AP=0.71123, lr=2.54e-04, 8.0s
+    [swiglu] epoch 07/20 train CE=0.01797, val CE=0.04051, val AP=0.75241, lr=2.35e-04, 8.1s
+    [swiglu] epoch 08/20 train CE=0.01563, val CE=0.03929, val AP=0.81265, lr=2.15e-04, 8.2s
+    [swiglu] epoch 09/20 train CE=0.01244, val CE=0.05063, val AP=0.78743, lr=1.92e-04, 8.1s
+    [swiglu] epoch 10/20 train CE=0.01104, val CE=0.05491, val AP=0.78794, lr=1.69e-04, 8.0s
+    [swiglu] epoch 11/20 train CE=0.00912, val CE=0.04888, val AP=0.77855, lr=1.46e-04, 8.0s
+    [swiglu] epoch 12/20 train CE=0.00575, val CE=0.07002, val AP=0.74410, lr=1.22e-04, 8.0s
+    [swiglu] epoch 13/20 train CE=0.00400, val CE=0.06688, val AP=0.77324, lr=1.00e-04, 8.0s
+    [swiglu] epoch 14/20 train CE=0.00325, val CE=0.06694, val AP=0.77692, lr=7.95e-05, 8.0s
+    [swiglu] epoch 15/20 train CE=0.00175, val CE=0.07206, val AP=0.78388, lr=6.09e-05, 8.0s
+    Early stopping swiglu (best epoch 8).
+  -> SWIGLU: best epoch=8, val threshold=0.880081, TEST precision=0.8333, recall=0.7746, F1=0.8029, AP=0.7968, (TP=55, FP=11, FN=16, TN=42477)
+
+
+=== HELD-OUT TEST RESULTS (fraud = positive class) ===
+ seed  model  parameters  best_epoch  threshold  test_precision  test_recall  test_f1  test_average_precision
+   42   gelu      453602           9     0.9726          0.8209       0.7746   0.7971                  0.7862
+   42 swiglu      454114           5     0.8727          0.8028       0.8028   0.8028                  0.7945
+   43   gelu      453602          14     0.9777          0.8493       0.8732   0.8611                  0.8606
+   43 swiglu      454114          11     0.9783          0.9524       0.8451   0.8955                  0.9109
+   44   gelu      453602          11     0.9592          0.8730       0.7746   0.8209                  0.7939
+   44 swiglu      454114           8     0.9699          0.8814       0.7324   0.8000                  0.8093
+   45   gelu      453602          16     0.9555          0.9298       0.7465   0.8281                  0.7968
+   45 swiglu      454114          17     0.9680          0.9492       0.7887   0.8615                  0.8033
+   46   gelu      453602           8     0.9083          0.8333       0.8451   0.8392                  0.8432
+   46 swiglu      454114           6     0.8653          0.8451       0.8451   0.8451                  0.8558
+   47   gelu      453602           9     0.6150          0.8361       0.7183   0.7727                  0.7356
+   47 swiglu      454114           7     0.9672          0.8475       0.7042   0.7692                  0.7806
+   48   gelu      453602           8     0.9646          0.8594       0.7746   0.8148                  0.7672
+   48 swiglu      454114          14     0.9974          0.9815       0.7465   0.8480                  0.8326
+   49   gelu      453602          14     0.9876          0.7746       0.7746   0.7746                  0.7891
+   49 swiglu      454114          20     0.8850          0.8060       0.7606   0.7826                  0.7778
+   50   gelu      453602           2     0.9908          0.7969       0.7183   0.7556                  0.6904
+   50 swiglu      454114          14     0.9182          0.8689       0.7465   0.8030                  0.7302
+   51   gelu      453602          11     0.9761          0.8235       0.7887   0.8058                  0.7949
+   51 swiglu      454114           7     0.9797          0.8387       0.7324   0.7820                  0.8261
+   52   gelu      453602          11     0.9851          0.8551       0.8310   0.8429                  0.8154
+   52 swiglu      454114           5     0.7995          0.8082       0.8310   0.8194                  0.8018
+   53   gelu      453602          11     0.9167          0.7746       0.7746   0.7746                  0.7962
+   53 swiglu      454114           8     0.9837          0.8088       0.7746   0.7914                  0.8204
+   54   gelu      453602          14     0.9057          0.9062       0.8169   0.8593                  0.8540
+   54 swiglu      454114           9     0.9861          0.9787       0.6479   0.7797                  0.8402
+   55   gelu      453602          13     0.9394          0.7879       0.7324   0.7591                  0.6947
+   55 swiglu      454114          12     0.9929          0.8929       0.7042   0.7874                  0.7248
+   56   gelu      453602          13     0.9790          0.9333       0.7887   0.8550                  0.8187
+   56 swiglu      454114           7     0.9928          0.9423       0.6901   0.7967                  0.8269
+   57   gelu      453602          10     0.8527          0.8657       0.8169   0.8406                  0.8040
+   57 swiglu      454114           6     0.7939          0.7564       0.8310   0.7919                  0.8121
+   58   gelu      453602           5     0.9511          0.8852       0.7606   0.8182                  0.7682
+   58 swiglu      454114          16     0.9803          0.8710       0.7606   0.8120                  0.7812
+   59   gelu      453602          12     0.9618          0.8571       0.8451   0.8511                  0.8490
+   59 swiglu      454114           4     0.9494          0.8657       0.8169   0.8406                  0.8251
+   60   gelu      453602           7     0.9935          0.8800       0.6197   0.7273                  0.8199
+   60 swiglu      454114           3     0.9951          0.8909       0.6901   0.7778                  0.8117
+   61   gelu      453602          12     0.9826          0.8154       0.7465   0.7794                  0.7829
+   61 swiglu      454114           8     0.8801          0.8333       0.7746   0.8029                  0.7968
+
+=== ACROSS-SEED MEAN +/- STD ===
+       test_precision        test_recall        test_f1        test_average_precision       
+                 mean    std        mean    std    mean    std                   mean    std
+model                                                                                       
+gelu           0.8479 0.0463      0.7761 0.0565  0.8089 0.0394                 0.7930 0.0464
+swiglu         0.8711 0.0633      0.7613 0.0568  0.8095 0.0328                 0.8081 0.0407
+
+Saved loss curves, checkpoints and metrics in: /home/parv/ffnbench/results
