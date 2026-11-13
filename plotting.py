@@ -12,7 +12,9 @@ import pandas as pd
 def plot_loss_curves(history: pd.DataFrame, output_dir: Path, seed: int) -> None:
     """Each Transformer gets its own subplot with train and validation loss."""
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.5), sharey=True)
-    for ax, name in zip(axes, ("gelu", "swiglu")):
+    baselines = [name for name in history["model"].unique() if name != "swiglu"]
+    baseline = baselines[0] if baselines else "gelu"
+    for ax, name in zip(axes, (baseline, "swiglu")):
         subset = history.loc[(history["seed"] == seed) & (history["model"] == name)]
         ax.plot(subset["epoch"], subset["train_loss"], label="Train weighted CE")
         ax.plot(subset["epoch"], subset["val_loss"], label="Validation weighted CE")

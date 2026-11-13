@@ -13,11 +13,12 @@ class GELUTransformer(FeatureTransformerClassifier):
         depth: int = 4,
         num_heads: int = 4,
         ffn_hidden_dim: int = 384,
+        mlp_activation: str = "gelu",
     ) -> None:
         super().__init__(
             num_features=num_features,
             d_model=d_model,
             depth=depth,
             num_heads=num_heads,
-            ffn_factory=lambda size: GELUFFN(size, ffn_hidden_dim),
+            ffn_factory=lambda size: GELUFFN(size, ffn_hidden_dim, activation=mlp_activation),
         )
