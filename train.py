@@ -43,6 +43,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--clip-grad-norm", type=float, default=1.0)
     parser.add_argument("--patience", type=int, default=7, help="Early stop after this many epochs without val AP improvement; 0 disables")
     parser.add_argument("--seeds", type=int, nargs="+", default=[42], help="Run paired comparisons on one or more random seeds")
+    parser.add_argument("--mlp-activation", choices=("gelu", "silu"), default="gelu",
+                        help="Activation for the standard, ungated MLP")
     parser.add_argument("--d-model", type=int, default=96)
     parser.add_argument("--depth", type=int, default=4)
     parser.add_argument("--heads", type=int, default=4)
@@ -325,7 +327,7 @@ def main() -> None:
         encoding="utf-8",
     )
     print(f"Device: {device}; no dropout, no causal attention mask")
-    print(f"Comparison mode: {args.matching}; seeds: {args.seeds}")
+    print(f"Comparison mode: {args.matching}; MLP activation: {args.mlp_activation}; seeds: {args.seeds}")
     all_history, all_results = [], []
     mlp_width = max(1, round(args.d_model * args.mlp_ratio))
     swiglu_width = (
@@ -349,6 +351,7 @@ def main() -> None:
         gelu = GELUTransformer(
             num_features=len(FEATURE_COLUMNS), d_model=args.d_model,
             depth=args.depth, num_heads=args.heads, ffn_hidden_dim=mlp_width,
+            mlp_activation=args.mlp_activation,
         )
         set_seed(seed)
         swiglu = SwiGLUTransformer(
@@ -365,7 +368,7 @@ def main() -> None:
             flush=True,
         )
         for name, model, width in (
-            ("gelu", gelu, mlp_width), ("swiglu", swiglu, swiglu_width),
+            (args.mlp_activation, gelu, mlp_width), ("swiglu", swiglu, swiglu_width),
         ):
             set_seed(seed)
             loaders = build_dataloaders(

@@ -8,10 +8,12 @@ from torch.nn import functional as F
 class GELUFFN(nn.Module):
     """Standard Transformer FFN: W_down(GELU(W_up(x)))."""
 
-    def __init__(self, d_model: int, hidden_dim: int) -> None:
+    def __init__(self, d_model: int, hidden_dim: int, activation: str = "gelu") -> None:
         super().__init__()
+        if activation not in ("gelu", "silu"):
+            raise ValueError("activation must be gelu or silu")
         self.up = nn.Linear(d_model, hidden_dim)
-        self.activation = nn.GELU()
+        self.activation = nn.GELU() if activation == "gelu" else nn.SiLU()
         self.down = nn.Linear(hidden_dim, d_model)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:

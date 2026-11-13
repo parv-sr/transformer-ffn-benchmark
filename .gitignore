@@ -6,3 +6,5 @@ results/
 *.pyc
 *.lock
 *.py[oc]
+exp2/
+exp2*.log

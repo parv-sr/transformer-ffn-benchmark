@@ -148,3 +148,15 @@ training script. Test labels are never used for checkpoint or threshold selectio
 - `tests/test_architecture.py`: minimal architecture and preprocessing tests.
 
 To run the tests: `python -m unittest discover -s tests -v`.
+
+## Research experiments
+
+See [docs/README.md](docs/README.md) for experiment records, figures, results, and planned datasets.
+
+Capacity sweep (Experiment 02; SiLU MLP vs SwiGLU, 4 scales × 3 seeds):
+
+```bash
+python -u exp2.py --csv data/creditcard.csv 2>&1 | tee exp2_run.log
+```
+
+Outputs are isolated in `exp2/`; historical `results/` is unaffected. Run `python -m unittest discover -s tests -v` before training.
