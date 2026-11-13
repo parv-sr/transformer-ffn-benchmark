@@ -7,6 +7,8 @@ Every experiment gets one folder `experiments/expNN/`.
 | [Exp 01](exp01/README.md) | `python -m experiments.exp01.train` | Credit-card FFN comparison |
 | [Exp 02](exp02/README.md) | `python -m experiments.exp02.exp02` | Capacity sweep |
 | [Exp 03](exp03/README.md) | `python -m experiments.exp03.exp03` | Multi-dataset probe |
+| [Exp 04](exp04/README.md) | `python -m experiments.exp04.exp04` | Six-seed Forest vs XGBoost |
+| [Exp 05](exp05/README.md) | Planned | Controlled interaction-property study |
 
 **Future experiments:** use `experiments/exp04/`, `exp05/`, etc. Keep each runner, preprocessing, plotting, tests, and one short Markdown protocol within its own folder. Shared model primitives stay under `models/`; shared metrics stay in `metrics.py`. Keep generated results in ignored output directories, not in Git.
 

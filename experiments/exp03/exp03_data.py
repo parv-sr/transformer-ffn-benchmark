@@ -162,9 +162,12 @@ def _prepare_split(frame: pd.DataFrame, numeric: list[str], categorical: list[st
                          torch.from_numpy(x_cat), torch.from_numpy(y))
 
 
-def load_dataset(root: Path, dataset: str, max_rows: int, seed: int) -> PreparedData:
+def load_dataset(root: Path, dataset: str, max_rows: int, seed: int, *,
+                 sample_seed: int | None = None) -> PreparedData:
+    """Default Exp03 behavior unchanged; Exp04 can fix the sample across split seeds."""
     path = find_source(root, dataset)
-    frame, population = sample_rows(path, dataset, max_rows=max_rows, seed=seed)
+    frame, population = sample_rows(path, dataset, max_rows=max_rows,
+                                    seed=seed if sample_seed is None else sample_seed)
     if frame["target"].isna().any():
         raise ValueError(f"{dataset}: unknown class label(s)")
     frame["target"] = pd.to_numeric(frame["target"], errors="raise").astype(int)
