@@ -160,3 +160,7 @@ python -u exp2.py --csv data/creditcard.csv 2>&1 | tee exp2_run.log
 ```
 
 Outputs are isolated in `exp2/`; historical `results/` is unaffected. Run `python -m unittest discover -s tests -v` before training.
+
+## Experiment 03 — Multi-dataset transfer
+
+See [docs/04_multi_dataset_probe.md](docs/04_multi_dataset_probe.md). One seed across Forest Cover, Mushrooms and SUSY, four parameter scales, SiLU vs SwiGLU. Data download: `bash scripts/download_exp3.sh`; training: `python -u exp3.py`. Compact outputs: `results/exp03/{config.json,datasets.csv,history.csv,metrics.csv}`.

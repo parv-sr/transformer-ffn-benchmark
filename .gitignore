@@ -8,3 +8,6 @@ results/
 *.py[oc]
 exp2/
 exp2*.log
+
+data/exp03/
+exp03_run.log
