@@ -26,14 +26,14 @@ https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud.
 
 ```bash
 # Fair, approximately parameter-matched main comparison:
-python train.py --csv data/creditcard.csv
+python -m experiments.exp01.train --csv data/creditcard.csv
 
 # Repeat on three seeds to inspect variance:
-python train.py --csv data/creditcard.csv --seeds 42 43 44
+python -m experiments.exp01.train --csv data/creditcard.csv --seeds 42 43 44
 
 # Literal FFN replacement using the same internal hidden width, despite
 # SwiGLU having ~50% more FFN matrix parameters:
-python train.py --csv data/creditcard.csv --matching equal_width --output-dir results_equal_width
+python -m experiments.exp01.train --csv data/creditcard.csv --matching equal_width --output-dir results_equal_width
 ```
 
 You can tune `--d-model`, `--depth`, `--heads`, `--mlp-ratio`, `--epochs`,
@@ -134,20 +134,20 @@ training script. Test labels are never used for checkpoint or threshold selectio
 
 ## Files
 
-- `dataset.py`: `FraudDataset` and training-only standardization + split logic.
-- `dataloaders.py`: independent train/validation/test DataLoader builders.
+- `experiments/exp01/dataset.py`: `FraudDataset` and training-only standardization + split logic.
+- `experiments/exp01/dataloaders.py`: independent train/validation/test DataLoader builders.
 - `models/common.py`: shared tokenizer, pre-LN non-causal attention blocks,
   `[CLS]` classifier, and softmax inference method.
 - `models/mlp_transformer.py`: the GELU model definition.
 - `models/swiglu_transformer.py`: the SwiGLU model definition.
 - `models/ffn.py`: both FFN formulas.
-- `train.py`: full paired training, scheduling, gradient accumulation/clipping,
+- `experiments/exp01/train.py`: full paired training, scheduling, gradient accumulation/clipping,
   model selection and test reporting.
 - `metrics.py`: validation threshold tuning and fraud metrics.
-- `plotting.py`: loss figures.
-- `tests/test_architecture.py`: minimal architecture and preprocessing tests.
+- `experiments/exp01/plotting.py`: loss figures.
+- `experiments/exp01/tests/test_architecture.py`: minimal architecture and preprocessing tests.
 
-To run the tests: `python -m unittest discover -s tests -v`.
+To run the tests: `python -m unittest discover -s experiments -t . -p 'test_*.py' -v`.
 
 ## Research experiments
 
@@ -156,13 +156,28 @@ See [docs/README.md](docs/README.md) for experiment records, figures, results, a
 Capacity sweep (Experiment 02; SiLU MLP vs SwiGLU, 4 scales × 3 seeds):
 
 ```bash
-python -u exp2.py --csv data/creditcard.csv 2>&1 | tee exp2_run.log
+python -u -m experiments.exp02.exp02 --csv data/creditcard.csv 2>&1 | tee exp2_run.log
 ```
 
-Outputs are isolated in `exp2/`; historical `results/` is unaffected. Run `python -m unittest discover -s tests -v` before training.
+Outputs are isolated in `exp2/`; historical `results/` is unaffected. Run `python -m unittest discover -s experiments -t . -p 'test_*.py' -v` before training.
 
 ## Experiment 03 — Multi-dataset transfer
 
-See [docs/04_multi_dataset_probe.md](docs/04_multi_dataset_probe.md). One seed across Forest Cover, Mushrooms and SUSY, four parameter scales, SiLU vs SwiGLU. Data download: `bash scripts/download_exp3.sh`; training: `python -u exp3.py`. Compact outputs: `results/exp03/{config.json,datasets.csv,history.csv,metrics.csv}`.
+See [experiments/exp03/README.md](experiments/exp03/README.md). One seed across Forest Cover, Mushrooms and SUSY, four parameter scales, SiLU vs SwiGLU. Data download: `bash experiments/exp03/download.sh`; training: `python -u -m experiments.exp03.exp03`. Compact outputs: `results/exp03/{config.json,datasets.csv,history.csv,metrics.csv}`.
 
-Exp 03 loss curves: `results/exp03/{forest,mushrooms,susy}_loss_curves.png` (4 × 2 panels per dataset). Regenerate without training: `python exp3_plots.py --results-dir results/exp03`.
+Exp 03 loss curves: `results/exp03/{forest,mushrooms,susy}_loss_curves.png` (4 × 2 panels per dataset). Regenerate without training: `python -m experiments.exp03.exp03_plots --results-dir results/exp03`.
+
+### Repository layout
+
+```text
+experiments/
+  exp01/   # Credit-card FFN comparison: train, data loaders, plots, tests, protocol
+  exp02/   # Capacity sweep: runner, analysis, tests, protocol
+  exp03/   # Multi-dataset sweep: data, model, runner, plots, download, tests, protocol
+models/     # Shared model/tokenization modules
+metrics.py  # Shared scoring utilities
+docs/       # Research index and dataset roadmap
+results/    # Generated outputs (ignored)
+```
+
+Run from repository root using `python -m experiments.expNN.<module>`. Place future experiment-specific code in `experiments/exp04/`, etc.; keep reusable primitives outside the experiment folders.

@@ -21,12 +21,12 @@ from torch.nn import functional as F
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
 
-from exp2 import CAPACITIES
-from exp3_data import DATASETS, find_source, load_dataset
-from exp3_model import MixedBinaryTransformer
-from exp3_plots import plot_dataset_loss_curves, regenerate_plots
+from experiments.exp02.exp02 import CAPACITIES
+from experiments.exp03.exp03_data import DATASETS, find_source, load_dataset
+from experiments.exp03.exp03_model import MixedBinaryTransformer
+from experiments.exp03.exp03_plots import plot_dataset_loss_curves, regenerate_plots
 from metrics import compute_fraud_metrics, validation_f1_threshold
-from train import (build_scheduler, choose_device, num_parameters,
+from experiments.exp01.train import (build_scheduler, choose_device, num_parameters,
                    set_seed, synchronize_shared_weights)
 
 

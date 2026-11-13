@@ -1,8 +1,8 @@
 """Train and compare GELU-MLP vs SwiGLU encoder Transformers on creditcard.csv.
 
 Examples:
-    python train.py --csv data/creditcard.csv
-    python train.py --csv data/creditcard.csv --matching equal_width --seeds 42 43 44
+    python -m experiments.exp01.train --csv data/creditcard.csv
+    python -m experiments.exp01.train --csv data/creditcard.csv --matching equal_width --seeds 42 43 44
 """
 
 import argparse
@@ -22,11 +22,11 @@ from torch.nn import functional as F
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import LambdaLR
 
-from dataloaders import FraudLoaders, build_dataloaders
-from dataset import FEATURE_COLUMNS, load_fraud_splits
+from experiments.exp01.dataloaders import FraudLoaders, build_dataloaders
+from experiments.exp01.dataset import FEATURE_COLUMNS, load_fraud_splits
 from metrics import compute_fraud_metrics, validation_f1_threshold
 from models import GELUTransformer, SwiGLUTransformer
-from plotting import plot_loss_curves
+from experiments.exp01.plotting import plot_loss_curves
 
 
 def parse_args() -> argparse.Namespace:

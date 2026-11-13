@@ -6,9 +6,9 @@ import numpy as np
 import pandas as pd
 import torch
 
-from exp3_data import load_dataset, sample_rows
-from exp3_model import MixedBinaryTransformer
-from train import num_parameters, synchronize_shared_weights
+from experiments.exp03.exp03_data import load_dataset, sample_rows
+from experiments.exp03.exp03_model import MixedBinaryTransformer
+from experiments.exp01.train import num_parameters, synchronize_shared_weights
 
 
 class Exp03Tests(unittest.TestCase):

@@ -12,7 +12,7 @@ Forest's original **seven-class** task is imbalanced. Only the *defined binary t
 
 ## Mixed feature tokenizer
 
-Prototype: [mixed_feature_tokenizer.py](../mixed_feature_tokenizer.py). This is **not used by Exp 02**.
+Prototype: [mixed_feature_tokenizer.py](../models/mixed_feature_tokenizer.py). This is **not used by Exp 02**.
 
 | Input | Token rule | Learned parameters |
 |---|---|---|

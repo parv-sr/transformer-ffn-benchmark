@@ -1,7 +1,7 @@
 """Three compact Exp 03 PNGs: one 4x2 loss-curve grid per dataset.
 
 Regenerate existing plots without loading models or retraining:
-    python exp3_plots.py --results-dir results/exp03
+    python -m experiments.exp03.exp03_plots --results-dir results/exp03
 """
 from __future__ import annotations
 
@@ -13,8 +13,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from exp2 import CAPACITIES
-from exp3_data import DATASETS
+from experiments.exp02.exp02 import CAPACITIES
+from experiments.exp03.exp03_data import DATASETS
 
 
 def plot_dataset_loss_curves(history: pd.DataFrame, results_dir: Path, dataset: str) -> Path | None:

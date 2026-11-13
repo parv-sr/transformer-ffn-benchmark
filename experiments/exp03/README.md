@@ -16,11 +16,11 @@ Kaggle credentials and competition rule acceptance required. From repo root:
 
 ~~~bash
 uv pip install -r requirements.txt
-bash scripts/download_exp3.sh
-python -u exp3.py 2>&1 | tee exp03_run.log
+bash experiments/exp03/download.sh
+python -u -m experiments.exp03.exp03 2>&1 | tee exp03_run.log
 ~~~
 
-For a preflight without creating outputs: `python exp3.py --dry-run`.
+For a preflight without creating outputs: `python -m experiments.exp03.exp03 --dry-run`.
 
 ## Compact outputs (no checkpoints/predictions)
 
@@ -38,7 +38,7 @@ results/exp03/
 Each PNG contains an eight-panel grid (4 capacities × 2 FFNs), with train/validation CE and empty panels labeled pending. Plots regenerate automatically as fits finish and when an interrupted job restarts. To create PNGs from an existing history without training:
 
 ~~~bash
-python exp3_plots.py --results-dir results/exp03
+python -m experiments.exp03.exp03_plots --results-dir results/exp03
 ~~~
 
 On restart, complete fits are skipped. Each fit is committed atomically to the CSVs; model snapshots are held only in RAM. Changing configuration requires a **new output directory**. No saved checkpoints means individual fits cannot resume mid-training.

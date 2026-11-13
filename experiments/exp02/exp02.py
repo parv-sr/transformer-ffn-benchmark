@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from exp2_analysis import aggregate_exp2
+from experiments.exp02.exp02_analysis import aggregate_exp2
 from models import GELUTransformer, SwiGLUTransformer
 
 CAPACITIES = {
@@ -64,7 +64,7 @@ def main():
         print(f"{name:8s} MLP={na:,} SwiGLU={nb:,} gap={abs(na-nb)/na:.2%}", flush=True)
         out = args.output_dir / name
         command = [
-            sys.executable, "-u", str(Path(__file__).with_name("train.py")),
+            sys.executable, "-u", "-m", "experiments.exp01.train",
             "--csv", str(args.csv), "--output-dir", str(out),
             "--d-model", str(d), "--depth", str(depth), "--heads", str(heads),
             "--matching", "equal_params", "--mlp-ratio", "4",

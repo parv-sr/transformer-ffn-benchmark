@@ -1,8 +1,8 @@
 """Experiment 02 architecture and tokenizer smoke tests."""
 import unittest
 import torch
-from exp2 import CAPACITIES, count_parameters
-from mixed_feature_tokenizer import MixedFeatureTokenizer
+from experiments.exp02.exp02 import CAPACITIES, count_parameters
+from models.mixed_feature_tokenizer import MixedFeatureTokenizer
 from models import GELUTransformer, SwiGLUTransformer
 
 

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from exp3_plots import regenerate_plots
+from experiments.exp03.exp03_plots import regenerate_plots
 
 
 class LossPlotTests(unittest.TestCase):

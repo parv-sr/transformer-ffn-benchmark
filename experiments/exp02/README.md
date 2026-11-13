@@ -7,13 +7,13 @@
 From repository root, inside the activated uv environment; run in tmux:
 
 ~~~bash
-python -u exp2.py --csv data/creditcard.csv 2>&1 | tee exp2_run.log
+python -m experiments.exp02.exp02 --csv data/creditcard.csv 2>&1 | tee exp2_run.log
 ~~~
 
 Preflight (does not train):
 
 ~~~bash
-python exp2.py --dry-run
+python -m experiments.exp02.exp02 --dry-run
 ~~~
 
 Output is in **exp2/** and never overwrites historical **results/**.
@@ -27,7 +27,7 @@ Output is in **exp2/** and never overwrites historical **results/**.
 | Baseline | 96 | 4 | 4 | 453,602 | 454,114 |
 | Large | 128 | 4 | 4 | 801,410 | 801,578 |
 
-![Parameter budget per scale](figures/exp02_capacity.svg)
+![Parameter budget per scale](figures/capacity.svg)
 
 | Control | Value |
 |---|---|

@@ -24,7 +24,7 @@
 
 SwiGLU wins 15/20 paired AP comparisons and 11/20 F1 comparisons.
 
-![Paired AP and F1 differences across seeds](figures/exp01_seed_deltas.svg)
+![Paired AP and F1 differences across seeds](figures/seed_deltas.svg)
 
 **Finding:** AP favors SwiGLU modestly; F1 is approximately tied. Test sets across random splits overlap, so runs are not independent datasets.
 
@@ -41,6 +41,6 @@ SwiGLU wins 15/20 paired AP comparisons and 11/20 F1 comparisons.
 
 ## Generalization observation
 
-Training CE continues falling as validation CE rises. Validation AP may still improve: calibration deterioration and ranking deterioration are not equivalent. The capacity hypothesis motivates [Exp 02](02_capacity_scaling.md).
+Training CE continues falling as validation CE rises. Validation AP may still improve: calibration deterioration and ranking deterioration are not equivalent. The capacity hypothesis motivates [Exp 02](../exp02/README.md).
 
-20-seed source: [experiment_20seeds.log](../experiment_20seeds.log). No causal or universal architectural claim.
+20-seed source: [experiment_20seeds.log](experiment_20seeds.log). No causal or universal architectural claim.
