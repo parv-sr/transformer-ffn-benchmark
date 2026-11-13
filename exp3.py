@@ -24,6 +24,7 @@ from torch.utils.data import DataLoader
 from exp2 import CAPACITIES
 from exp3_data import DATASETS, find_source, load_dataset
 from exp3_model import MixedBinaryTransformer
+from exp3_plots import plot_dataset_loss_curves, regenerate_plots
 from metrics import compute_fraud_metrics, validation_f1_threshold
 from train import (build_scheduler, choose_device, num_parameters,
                    set_seed, synchronize_shared_weights)
@@ -201,6 +202,7 @@ def run():
     metrics = read_csv_rows(metrics_path)
     history = read_csv_rows(history_path)
     datasets_info = read_csv_rows(data_path)
+    regenerate_plots(history_path, args.output_dir)
     completed = {(r["dataset"], r["capacity"], r["model"]) for r in metrics}
 
     for dataset in DATASETS:
@@ -252,6 +254,7 @@ def run():
                 atomic_csv(history_path, history)
                 metrics.append(result)
                 atomic_csv(metrics_path, metrics)
+                plot_dataset_loss_curves(pd.DataFrame(history), args.output_dir, dataset)
                 completed.add(key)
                 print(f"  DONE {key}: F1={result['test_f1']:.4f}, "
                       f"AP={result['test_ap']:.4f}", flush=True)

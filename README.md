@@ -164,3 +164,5 @@ Outputs are isolated in `exp2/`; historical `results/` is unaffected. Run `pytho
 ## Experiment 03 — Multi-dataset transfer
 
 See [docs/04_multi_dataset_probe.md](docs/04_multi_dataset_probe.md). One seed across Forest Cover, Mushrooms and SUSY, four parameter scales, SiLU vs SwiGLU. Data download: `bash scripts/download_exp3.sh`; training: `python -u exp3.py`. Compact outputs: `results/exp03/{config.json,datasets.csv,history.csv,metrics.csv}`.
+
+Exp 03 loss curves: `results/exp03/{forest,mushrooms,susy}_loss_curves.png` (4 × 2 panels per dataset). Regenerate without training: `python exp3_plots.py --results-dir results/exp03`.
