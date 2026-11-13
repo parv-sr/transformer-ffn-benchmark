@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from models.common import FeatureTransformerClassifier
 from models.ffn import GELUFFN, SwiGLUFFN
-from mixed_feature_tokenizer import MixedFeatureTokenizer
+from models.mixed_feature_tokenizer import MixedFeatureTokenizer
 
 
 class MixedBinaryTransformer(FeatureTransformerClassifier):

@@ -6,4 +6,4 @@ kaggle competitions download -c playground-series-s4e8 -p data/exp03/mushrooms
 unzip -o -q data/exp03/mushrooms/playground-series-s4e8.zip -d data/exp03/mushrooms
 rm -f data/exp03/mushrooms/playground-series-s4e8.zip
 kaggle datasets download -d janus137/supersymmetry-dataset -p data/exp03/susy --unzip
-python exp3.py --dry-run
+python -m experiments.exp03.exp03 --dry-run

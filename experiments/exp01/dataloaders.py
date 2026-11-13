@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import torch
 from torch.utils.data import DataLoader
 
-from dataset import FraudSplits
+from experiments.exp01.dataset import FraudSplits
 
 
 @dataclass

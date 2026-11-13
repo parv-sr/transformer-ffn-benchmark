@@ -6,12 +6,12 @@ import numpy as np
 import pandas as pd
 import torch
 
-from dataloaders import build_dataloaders
-from dataset import FEATURE_COLUMNS, load_fraud_splits
+from experiments.exp01.dataloaders import build_dataloaders
+from experiments.exp01.dataset import FEATURE_COLUMNS, load_fraud_splits
 from metrics import compute_fraud_metrics, validation_f1_threshold
 from models import GELUTransformer, SwiGLUTransformer
 from models.ffn import GELUFFN, SwiGLUFFN
-from train import num_parameters, synchronize_shared_weights
+from experiments.exp01.train import num_parameters, synchronize_shared_weights
 
 
 class ArchitectureTests(unittest.TestCase):
